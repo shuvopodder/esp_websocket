@@ -1,3 +1,5 @@
+/* Shuvo Podder */
+
 #include <WiFi.h>  
 #include <WebSocketsClient.h>
 WebSocketsClient webSocket;
@@ -80,7 +82,7 @@ void setup() {
   Serial.print("IP address: ");
   Serial.println(WiFi.localIP());
     
-  Serial.print(", Connecting to server.");
+  Serial.print(", Connecting to server...");
     
 	// server address, port and URL
   String socketUrl = generateURL();
@@ -90,10 +92,10 @@ void setup() {
 	// event handler
 	webSocket.onEvent(webSocketEvent);
 
-	// use HTTP Basic Authorization this is optional remove if not needed
+	// Basic Authorization
 	//webSocket.setAuthorization("user", "Password");
 
-	// try ever 5000 again if connection has failed
+	// retry after 5 seconds if connection failed
 	webSocket.setReconnectInterval(5000);
 
 }
