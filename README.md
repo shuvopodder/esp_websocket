@@ -1,2 +1,2 @@
 # esp_websocket
- esp32 communicate with spring websocket using stomp broker
+ esp32 client communicate with spring websocket server using stomp broker over SockJS wrapper
